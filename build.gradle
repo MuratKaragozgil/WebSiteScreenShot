@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.0.4.RELEASE'
+}
+
+group 'com.challenge'
+version '1.0'
+
+project.ext {
+    seleniumVersion = '2.44.0'
+    drivers = ["chrome"]
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Application.class'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.0.4.RELEASE'
+
+    compile "org.seleniumhq.selenium:selenium-support:$seleniumVersion"
+    drivers.each { driver ->
+        compile "org.seleniumhq.selenium:selenium-$driver-driver:$seleniumVersion"
+    }
+
+    compile("io.github.bonigarcia:webdrivermanager:3.0.0")
+
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    compile group: 'com.google.guava', name: 'guava'
+
+    // https://mvnrepository.com/artifact/commons-validator/commons-validator
+    compile group: 'commons-validator', name: 'commons-validator', version: '1.6'
+
+}
