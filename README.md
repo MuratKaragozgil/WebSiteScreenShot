@@ -1,4 +1,4 @@
-# WebSiteScreenShot
+# Web Site Screen Shot
 Send urls of website and gets urls of screenshot of given websites
 
 There is one endpoint for generating web site screenshots. 
