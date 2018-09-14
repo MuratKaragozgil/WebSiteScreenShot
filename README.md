@@ -3,6 +3,20 @@ Send urls of website and gets urls of screenshot of given websites
 
 There is one endpoint for generating web site screenshots. 
 
+### Installation Guide
+
+```
+gradle clean build 
+```
+
+and then go to the build directory to executing jar file
+
+```
+java -jar websitescreenshot-1.0.jar
+```
+
+then server will be up.
+
 ### POST /screenshot/generate-screenshot
 
 Example: Create – POST  http://localhost:8080/screenshot/generate-screenshot
